@@ -4,6 +4,6 @@ import kr.hs.dgsw.smartschool.ktwiki.domain.model.DocumentDetail
 
 data class DocumentDetailState(
     val isLoading: Boolean = false,
-    val documents: DocumentDetail? = null,
+    val document: DocumentDetail? = null,
     val error: String = ""
 )
