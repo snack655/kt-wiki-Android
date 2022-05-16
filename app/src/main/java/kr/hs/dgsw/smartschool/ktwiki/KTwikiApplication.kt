@@ -1,4 +1,6 @@
 package kr.hs.dgsw.smartschool.ktwiki
 
-class KTwikiApplication {
-}
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class KTwikiApplication {}

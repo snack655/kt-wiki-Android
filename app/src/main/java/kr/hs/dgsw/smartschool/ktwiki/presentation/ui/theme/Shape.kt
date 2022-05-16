@@ -1,4 +1,4 @@
-package kr.hs.dgsw.smartschool.ktwiki.ui.theme
+package kr.hs.dgsw.smartschool.ktwiki.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

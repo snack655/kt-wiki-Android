@@ -1,4 +1,4 @@
-package kr.hs.dgsw.smartschool.ktwiki
+package kr.hs.dgsw.smartschool.ktwiki.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import kr.hs.dgsw.smartschool.ktwiki.ui.theme.KTwikiTheme
+import kr.hs.dgsw.smartschool.ktwiki.presentation.ui.theme.KTwikiTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
