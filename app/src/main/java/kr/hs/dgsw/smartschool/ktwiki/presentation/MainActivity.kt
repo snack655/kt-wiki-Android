@@ -10,34 +10,38 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
+import kr.hs.dgsw.smartschool.ktwiki.presentation.document.list.DocumentListScreen
 import kr.hs.dgsw.smartschool.ktwiki.presentation.ui.theme.KTwikiTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             KTwikiTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
+                Surface(color = MaterialTheme.colors.background) {
+                    val navController = rememberNavController()
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.DocumentListScreen.route
+                    ) {
+                        composable(
+                            route = Screen.DocumentListScreen.route
+                        ) {
+                            DocumentListScreen(navController = navController)
+                        }
+                        composable(
+                            route = Screen.DocumentDetailScreen.route + "/{idx}"
+                        ) {
+                            Screen.DocumentDetailScreen
+                        }
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    KTwikiTheme {
-        Greeting("Android")
     }
 }

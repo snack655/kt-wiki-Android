@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kr.hs.dgsw.smartschool.ktwiki.common.Constants
 import kr.hs.dgsw.smartschool.ktwiki.common.Resource
 import kr.hs.dgsw.smartschool.ktwiki.domain.usecase.document.GetDocumentUseCase
 import kr.hs.dgsw.smartschool.ktwiki.presentation.document.list.DocumentListState
@@ -22,7 +23,9 @@ class DocumentDetailViewModel @Inject constructor(
     val state: State<DocumentDetailState> = _state
 
     init {
-        //getDocuments(idx)
+        savedStateHandle.get<String>(Constants.PARAM_DOCUMENT_IDX)?.let { idx ->
+            getDocuments(idx.toInt())
+        }
     }
 
     private fun getDocuments(idx: Int) {
