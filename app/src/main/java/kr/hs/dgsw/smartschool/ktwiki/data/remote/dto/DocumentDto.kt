@@ -8,8 +8,8 @@ data class DocumentDto (
     val title: String,
     val text: String,
     val hits: Int,
-    val created_at: String,
-    val updated_at: String,
+    val createdAt: String,
+    val updatedAt: String,
     val category: Category
 )
 
@@ -27,8 +27,8 @@ fun DocumentDto.toDocumentDetail(): DocumentDetail {
         title = title,
         text = text,
         hits = hits,
-        created_at = created_at,
-        updated_at = updated_at,
+        created_at = createdAt,
+        updated_at = updatedAt,
         category = category
     )
 }
