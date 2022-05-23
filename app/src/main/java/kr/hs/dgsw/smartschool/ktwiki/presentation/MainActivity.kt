@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import kr.hs.dgsw.smartschool.ktwiki.presentation.document.detail.DocumentDetailScreen
 import kr.hs.dgsw.smartschool.ktwiki.presentation.document.list.DocumentListScreen
 import kr.hs.dgsw.smartschool.ktwiki.presentation.ui.theme.KTwikiTheme
 
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
                         composable(
                             route = Screen.DocumentDetailScreen.route + "/{idx}"
                         ) {
-                            Screen.DocumentDetailScreen
+                            DocumentDetailScreen()
                         }
                     }
                 }

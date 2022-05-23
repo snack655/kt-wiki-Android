@@ -1,6 +1,5 @@
 package kr.hs.dgsw.smartschool.ktwiki.data.repository
 
-import kr.hs.dgsw.smartschool.ktwiki.common.Response
 import kr.hs.dgsw.smartschool.ktwiki.data.remote.KTwikiApi
 import kr.hs.dgsw.smartschool.ktwiki.data.remote.dto.DocumentDto
 import kr.hs.dgsw.smartschool.ktwiki.domain.repository.KTwikiRepository
